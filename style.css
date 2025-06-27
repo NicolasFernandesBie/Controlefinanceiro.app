@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --bg-dark: #1e1e1e;
+  --bg-card: #2a2a2a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #aaa;
+  --green: #00ffab;
+  --red: #ff6b6b;
+  --purple: #6c63ff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* <-- isso ajuda a centralizar na vertical */
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+
+.container {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 420px;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+
+  background: linear-gradient(90deg, #6c63ff, #00ffab);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--purple);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+h1.balance {
+  font-size: 2rem;
+  color: var(--text-primary);
+}
+
+.inc-exp-container {
+  display: flex;
+  justify-content: space-between;
+  background: #1b1b1b;
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow);
+}
+
+.inc-exp-container>div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container>div:not(:last-child) {
+  border-right: 1px solid #333;
+}
+
+.money {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.money.plus {
+  color: var(--green);
+}
+
+.money.minus {
+  color: var(--red);
+}
+
+form {
+  margin-top: 2rem;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+input[type='text'],
+input[type='number'] {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  border: 1px solid #444;
+  background-color: #121212;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--purple);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.btn:hover {
+  background: #594cf0;
+}
+
+.transactions {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.transactions li {
+  background: #1f1f1f;
+  border-left: 5px solid transparent;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.transactions li.plus {
+  border-left-color: var(--green);
+}
+
+.transactions li.minus {
+  border-left-color: var(--red);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--red);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.2);
+}
